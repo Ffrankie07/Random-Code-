@@ -1,0 +1,7 @@
+#To print numbers up to a certain point (n = end point) 
+n = int(raw_input())
+#n+1 used since that numnber isn't printed. * is used so this doesn't come out as a list. sep'' (no space) makes it so our code prints out 123 when n = 3 instead of 1 2 3.
+print(*range(1, n+1), sep='')
+
+#Not equal to 
+!= 
