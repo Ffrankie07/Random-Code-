@@ -5,3 +5,37 @@ print(*range(1, n+1), sep='')
 
 #Not equal to 
 != 
+
+
+#Code used to solve cuboid puzzle
+if __name__ == '__main__':
+    x = int(raw_input())
+    y = int(raw_input())
+    z = int(raw_input())
+    n = int(raw_input())
+    
+cuboid_sum = x+y+z
+
+#i = (range(0,x+1))
+#print(i)
+#j = (range(0,y+1))
+#print(j)
+#k = (range(0,z+1))
+#print(k)
+
+#We begin by defining an empyty list called results ([] means an empty list). 
+results = []
+#Means all values less than or equal to x which is inputed by user above with x = int(...) 
+for x in range(0,x+1): 
+    for y in range(0,y+1): 
+        for z in range(0,z+1): 
+            cuboid_list = [x,y,z]
+            #print(cuboid_list) 
+            list_sum = x+y+z
+            #print(list_sum) 
+            if list_sum != n:
+                results.append(cuboid_list)
+                #firsst iteration of this function will be ([0,0,0] because for all values 0-x, 0 is first and this rule applies to y and z. So with our list of (0,0,0)
+                #con. we add all of our elements together to get a sum of 0, which if it doesn't equal n (another input selected by the user), will be printed. 
+                
+print(results)
