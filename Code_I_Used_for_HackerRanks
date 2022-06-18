@@ -7,7 +7,8 @@ print(*range(1, n+1), sep='')
 != 
 
 
-#Code used to solve cuboid puzzle
+#Code used to solve cuboid puzzle:
+
 if __name__ == '__main__':
     x = int(raw_input())
     y = int(raw_input())
@@ -39,3 +40,79 @@ for x in range(0,x+1):
                 #con. we add all of our elements together to get a sum of 0, which if it doesn't equal n (another input selected by the user), will be printed. 
                 
 print(results)
+
+
+
+#To solve for second highest score: 
+#Sample input = [2, 3, 6, 6, 5] (4 indexes total) 
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    #arr.sort makes our arr list go from a disjumbled mess to a list of least to greatest
+    arr.sort()
+    #a = max(arr)
+    #a = max value for the arr array
+    print(arr[(arr.index(max(arr)))-1])
+    #arr.index(max(arr))--> this will give the index of maximum value from the list, which is 3 (index 3 has value of 6 and so too does index 4)
+    #We subtract 1 to get the index of the value before to get the 2nd highest value in the list. 
+    
+    
+    
+
+#A nested list is a list that contains another list (i.e.: a list of lists). It is also referred to as a multi-diminsional array. For example, a 2 dimensional array is used below:
+
+#nested_list = [['blue', 'green'], ['red', 'black'], ['blue', 'white']]
+#print len(nested_list)
+#prints 3
+3print nested_list[1]
+#prints ['red', 'black']
+#print nested_list[1][0]
+#prints red
+#To go through every element in this list, use a nested for loop.
+
+>>> nested_list = [['blue', 'green'], ['red', 'black'], ['blue', 'white']]
+>>> for inner in nested_list:
+...     for value in inner:
+...         print value
+... 
+blue
+green
+red
+black
+blue
+white
+
+
+
+for _ in ... = "we don't care about the iterator value, just that it should run some specific number of times".
+
+#Sort = orders list with repeats (ex. [4,7,7,2,1,1] --> [1,1,2,4,7,7])
+#Set = doesn't order list but removes repeats (ex. [4,7,7,2,1,1] --> [4,7,2,1])
+#combine the two to get a sorted list without repeats (sorted(set(my_list))
+
+
+#Nested Lists Prob. 
+n=int(input()) #user inputs number of lists within our list
+res=[]
+grade=[]
+for i in range(n): #starts at zero and goes to n (example, user will input name and mark for 5 students if n = 5 cuz i starts at 0 and goes to 4)
+    name=input()
+    mark=float(input())
+    res.append([name,mark])
+    grade.append(mark)   #calculation 2nd lowest
+#print(res)   
+#print(grade)
+grade=sorted(set(grade))  #sorted unique
+#print(grade)
+m=grade[1] #remember that 1 will be the 2nd lowest value after the list is sorted
+#print(m)
+name=[]
+for val in res: #for each name and mark (both are values) in res... (also val[0][1], 0 = name and 1 = mark)
+    if m==val[1]: #if the 2nd lowest value == mark from res...
+        name.append(val[0]) #append the value (name of student) to name list
+#print(name)   #unsorted     
+name.sort()
+#print(name)   #sorted
+for nm in name:
+    print(nm)
+
