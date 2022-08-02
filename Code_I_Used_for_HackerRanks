@@ -115,4 +115,30 @@ name.sort()
 #print(name)   #sorted
 for nm in name:
     print(nm)
+    
+    
+#Code for finding the percentage 
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {} #curly braces are used to define a data structure called a dictionary (a key/value mapping)
+    for _ in range(n):
+        name, *line = input().split() #maps can perform operation with multiple collections 
+        scores = list(map(float, line)) #maps float function onto the list of string scores in line 
+        student_marks[name] = scores
+    query_name = input()
+    marks = student_marks[query_name] #query_name = key to student marks (basically you type a name and it will provide you with the dictionary ({}))
+#format(value,'.nf) replace n with number of decimals you want!
+print(format(sum(marks)/3,'.2f'))
+
+#Code for Mod Divmod
+a = int(input())
+b = int(input())
+
+
+    
+print(a//b)
+print(a%b)
+print(divmod(a,b))
+    
+
 
