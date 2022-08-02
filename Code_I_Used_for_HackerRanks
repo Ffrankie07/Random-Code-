@@ -140,5 +140,13 @@ print(a//b)
 print(a%b)
 print(divmod(a,b))
     
+#Code for Mod Power
+a = int(input())
+b = int(input())
+m = int(input())
 
+first_result = pow(a,b) 
+second_result = pow(a,b,m)
+print(first_result)
+print(second_result)
 
