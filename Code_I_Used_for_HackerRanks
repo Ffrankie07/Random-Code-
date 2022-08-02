@@ -162,3 +162,6 @@ pow2 = pow(c,d)
 pow_sum = pow1 + pow2 
 print(pow_sum)
 
+#Code for Triangle Quest 1 
+for i in range(1,int(input())): #This is saying that it starts at one and stops one numbe before whatever is inputted. 
+    print(((10**i)//9)*i)
