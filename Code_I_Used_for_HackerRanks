@@ -150,3 +150,15 @@ second_result = pow(a,b,m)
 print(first_result)
 print(second_result)
 
+#Code for Intergers Come In All Sizes 
+a = int(input())
+b = int(input()) 
+c = int(input())
+d = int(input()) 
+
+pow1 = pow(a,b)
+pow2 = pow(c,d)
+
+pow_sum = pow1 + pow2 
+print(pow_sum)
+
