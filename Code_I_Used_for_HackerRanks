@@ -122,7 +122,7 @@ if __name__ == '__main__':
     n = int(input())
     student_marks = {} #curly braces are used to define a data structure called a dictionary (a key/value mapping)
     for _ in range(n):
-        name, *line = input().split() #maps can perform operation with multiple collections 
+        name, *line = input().split() #maps can perform operation with multiple collections. name = first input, following inputs become part of line variable. 
         scores = list(map(float, line)) #maps float function onto the list of string scores in line 
         student_marks[name] = scores
     query_name = input()
