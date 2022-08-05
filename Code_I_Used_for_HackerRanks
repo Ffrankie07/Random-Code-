@@ -197,3 +197,13 @@ if __name__ == '__main__':
     n = int(raw_input())
     integer_list = map(int, raw_input().split())
     print(hash(tuple(integer_list)))#Lists are not hashable so we had to convert it to a tuple first which is hashable 
+    
+#How to read this 
+import numpy
+
+my_array = numpy.array([ [1, 2], [3, 4] ])
+
+print numpy.mean(my_array, axis = 0)        #Output : [ 2.  3.] #When axis = 0, (1 + 3)/2 = 2 and (2 + 4)/2 = 3
+print numpy.mean(my_array, axis = 1)        #Output : [ 1.5  3.5] #When axis = 1, (1 + 2)/2 = 1.5 and (3 + 4)/2 = 3.5 
+print numpy.mean(my_array, axis = None)     #Output : 2.5 #When axis = none, do the mean of all numbers in the nested list (so in this case (1 + 2 + 3 + 4)/4 = 2.5
+print numpy.mean(my_array)                  #Output : 2.5 #If you don't specify the axis it will default to axis = none so you still get 2.5 in this case. 
