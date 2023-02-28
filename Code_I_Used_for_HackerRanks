@@ -207,3 +207,18 @@ print numpy.mean(my_array, axis = 0)        #Output : [ 2.  3.] #When axis = 0, 
 print numpy.mean(my_array, axis = 1)        #Output : [ 1.5  3.5] #When axis = 1, (1 + 2)/2 = 1.5 and (3 + 4)/2 = 3.5 
 print numpy.mean(my_array, axis = None)     #Output : 2.5 #When axis = none, do the mean of all numbers in the nested list (so in this case (1 + 2 + 3 + 4)/4 = 2.5
 print numpy.mean(my_array)                  #Output : 2.5 #If you don't specify the axis it will default to axis = none so you still get 2.5 in this case. 
+
+#Code for sWAP cASE Puzzle 
+def swap_case(s):
+    res = '' #begins with defining an empty list called res
+    for ch in s: #checks every character in the input s
+        if ch.isupper(): #if the character is uppercase then it is changed to lowercase and added to the res list using +=, vice versa for else statement
+            res += ch.lower()
+        else:
+            res += ch.upper()
+    return res
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
