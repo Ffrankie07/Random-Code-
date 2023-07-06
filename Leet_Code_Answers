@@ -1,0 +1,32 @@
+#Merge Alternating Words
+import numpy
+
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        word1_size = len(word1)
+        #DEBUG
+        print(word1_size)
+        word2_size = len(word2)
+         #DEBUG
+        print(word2_size)
+        result = ""
+        i = 0 
+        while (i < word1_size or i < word2_size):
+            #DEBUG
+            print(i)
+            if(i < word1_size):
+                result+=word1[i]
+            if(i < word2_size):
+                result+=word2[i]
+            i+=1
+            
+        return "".join(result)
+
+        #word1="abc"
+        #word2="xyz"
+        
+        #print(mergeAlternately(word1, word2))
+
+       # Create loop to iterate index from 0 to max_word_size
+
+       # Create if condition in loop to check index does not exceed work1 size or word2 size
