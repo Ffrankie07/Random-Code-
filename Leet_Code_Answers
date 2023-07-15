@@ -3,6 +3,7 @@ import numpy
 
 class Solution(object):
     def mergeAlternately(self, word1, word2):
+        #CAN'T DO LEN() w/INTS! MUST CONVERT TO STRING (ex = x = 121 --> len(str(x)) gives 3 cuz 121 is 3 has three digits) 
         word1_size = len(word1)
         #DEBUG
         print(word1_size)
