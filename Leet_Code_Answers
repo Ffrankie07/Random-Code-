@@ -56,3 +56,37 @@ class Solution(object):
                     print(i,k)
                     output = [i,k]
                     return output
+
+#Repeated Substring Pattern 
+
+class Solution(object):
+    def repeatedSubstringPattern(self, s):
+        print(s)
+        print(self)
+        """
+        self = string inputted 
+        :type s: str
+        :rtype: bool
+
+        Here we combine our string input to itself since if there is a repeating substring within it, it 
+        will appear in this combination. We have to remove first and last char in string cuz it will just
+        always return true. In the given problem, we're looking for substrings that are shorter than
+        the entire string (excluding the entire string itself) and that can be repeated to form the
+        original string. That's why we start the iteration from 1 (excluding length 0) and end it at n-1 
+        (excluding the length of the entire string).
+        """
+
+        concat_string = s + s
+        concat_string = concat_string[1:]
+        concat_string = concat_string[:-1]
+        print(concat_string)
+
+        # Here we are checking for our s input within concat_string. If we find s within concat_string,
+        # we return true, otherwise return false 
+        
+        if s in concat_string: 
+            return True
+        else: 
+            return False 
+
+
