@@ -90,3 +90,50 @@ class Solution(object):
             return False 
 
 
+Reorganize String Puzzle 
+
+class Solution(object):
+    def reorganizeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        # create list of 26 0s so we can count # of letters in string
+        alphabet = [ 0 for x in range(27)]
+        # get letter by itself 
+        for letter in s: 
+            temp = int(ord(letter)) - 97
+            print(temp)
+            alphabet[temp] += 1
+        clock = [True for x in range (27)] # list of 26 true values, we use true because saves memory,
+                                           # could use 0,1 but uses more space cuz 32 bits to represent 
+                                           # rather than 1 bit to represent True or False 
+        final_s = ''
+        for x in range(len(s)): # len(s) cuz we want same length as original s
+            # initializing vars here
+            big_letter = -1 # -1 cuz it can be any number below 0, or above 25 so it won't index into our 
+                            # alphabet. If it remains -1 then no letter available and so s isn't able to 
+                            # be reorganized. IS SET BACK TO -1 AFTER EACH LOOP
+            big_number = 0
+            for y in range(len(alphabet)): # going through alphabet list
+                if clock[y] == True and alphabet[y] > big_number: # checks if letters in alphabet = True
+                                                                  # aka not used last 
+                                                                  # alphabet [y] > big_num makes it so we 
+                                                                  # prioritize letter that we have most of
+                    big_letter = y 
+                    big_number = alphabet[y] # keeping track of which letter has the most appearences
+                if clock[y] == False: # inefficiency since check all clock but only 1 will ever be false 
+                                      # cuz cooldown
+                    clock[y] = True # everything becomes true here, we need to set one false later
+            if big_letter == -1: # comes into play after checking all 26 letters and NONE can be assigned, 
+                                 # we fail because big_letter was never updated
+                return ""
+            clock[big_letter] = False 
+            alphabet[big_letter] -= 1 # decrease the num of the specific letter in alphabet 
+            final_s += str(unichr(97 + big_letter))
+
+        return final_s
+
+            
+
+
